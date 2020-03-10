@@ -1,4 +1,5 @@
 ﻿@page "/ParentComponent"
+@page "/ParentComponent/{text}"
 
 <h1>Parent-child example</h1>
 
@@ -10,8 +11,11 @@
 
 
 @code{
+    [Parameter]
+    public string Text { get; set; }
+
     private void ShowMessage()
     {
-
+        Text = Text ?? "fantastic";
     }
 }
