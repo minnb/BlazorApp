@@ -1,0 +1,17 @@
+﻿@page "/movie"
+<MoviesList  Movies ="movies"></MoviesList>
+
+@code {
+    List<MovieModel> movies;
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(1000);
+        movies = new List<MovieModel>()
+        {
+            new MovieModel(){Name = "Spider-Man: Far From Home", Release = new DateTime(2019, 7, 2)},
+            new MovieModel(){Name = "Moana", Release = new DateTime(2016, 11, 23)},
+            new MovieModel(){Name = "Inception", Release = new DateTime(2010, 7, 16)}
+        };
+    }
+}

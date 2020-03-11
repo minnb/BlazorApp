@@ -18,11 +18,12 @@
     private IList<TodoItem> todos = new List<TodoItem>();
     private string newTodo;
 
-    private void AddTodo()
+    private async Task AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(newTodo))
         {
             todos.Add(new TodoItem { Title = newTodo });
+            await Task.Delay(1000);
             newTodo = string.Empty;
         }
     }

@@ -1,0 +1,17 @@
+﻿<div>
+    <p>Title: @Movie.Name</p>
+    <p>Release Date: <b>@Movie.Release.ToString("yyyy MM dd")</b></p>
+    @if (DisplayButtons)
+    {
+        <div>
+            <button class="btn btn-primary"  @onclick="@(()=>DeleteMovie.InvokeAsync(Movie))">Delete</button>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public MovieModel Movie { get; set; }
+    [Parameter] public bool DisplayButtons { get; set; } = false;
+    [Parameter] public EventCallback<MovieModel> DeleteMovie { get; set; }
+
+}
