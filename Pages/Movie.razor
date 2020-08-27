@@ -3,6 +3,7 @@
     <h3>Movie</h3>
     <MoviesList Movies="movies"/>
 </div>
+<button @onclick="AddNewMovie" >Add new movie</button>
 
 @code {
     List<MovieModel> movies;
@@ -16,5 +17,9 @@
             new MovieModel(){Name = "Moana", Release = new DateTime(2016, 11, 23)},
             new MovieModel(){Name = "Inception", Release = new DateTime(2010, 7, 16)}
         };
+    }
+    private void AddNewMovie()
+    {
+        movies.Add(new MovieModel() { Name = "Titanic", Release = DateTime.Today });
     }
 }
